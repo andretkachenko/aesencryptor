@@ -89,6 +89,6 @@ class Config
         Password = string.Empty;
         Salt = string.Empty;
         Iterations = 1000;
-        AlgorithmName = HashAlgorithmName.SHA1.Name;
+        AlgorithmName = "SHA1";
     }
 }
