@@ -80,15 +80,15 @@ class Config
     public required int Iterations { get; set; }
 
     [JsonProperty("hashAlgorithm")]
-    public required HashAlgorithmName HashAlgorithm { get => _hashAlgorithm; set => _hashAlgorithm = new HashAlgorithmName(value.ToString()); }
+    private string AlgorithmName { get; set; }
 
-    internal required HashAlgorithmName _hashAlgorithm;
+    public HashAlgorithmName HashAlgorithm => new HashAlgorithmName(AlgorithmName);
 
     public Config()
     {
         Password = string.Empty;
         Salt = string.Empty;
         Iterations = 1000;
-        _hashAlgorithm = HashAlgorithmName.SHA1;
+        AlgorithmName = HashAlgorithmName.SHA1.Name;
     }
 }
