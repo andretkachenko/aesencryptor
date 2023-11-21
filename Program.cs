@@ -11,7 +11,7 @@ var method = args[1];
 var value = args[2];
 
 // validate method and value
-if (method != "-e" && method != "d") return;
+if (method != "-e" && method != "-d") return;
 if (string.IsNullOrEmpty(value)) return;
 
 var config = ReadConfig(jsonPath);
